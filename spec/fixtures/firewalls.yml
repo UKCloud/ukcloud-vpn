@@ -1,0 +1,61 @@
+Firewalls:
+  - Name: Firewall_1
+    Service:
+      IsEnabled: true
+    Creds:
+      User: xxx.xxxx.xxx
+      Password: xxxxxxxxxxxx
+      Org: x-x-xx-xxxx
+      Url: api.vcd.portal.skyscapecloud.com
+      Edge: nftxxxxxx-x
+    GatewayIpsecVpnService:
+      IsEnabled: true
+      Tunnel:
+      - Name: west-to-east
+        IpsecVpnLocalPeerId:
+        IpsecVpnLocalPeerName:
+        PeerIpAddress: 111.111.111.111
+        PeerId: 111.111.111.111
+        LocalIpAddress: 222.222.222.222
+        LocalId: 222.222.222.222
+        LocalSubnet:
+        - Name: DMZ
+          Gateway: 10.0.1.1
+          Netmask: 255.255.255.0
+        PeerSubnet:
+        - Name: DMZ
+          Gateway: 10.0.10.1
+          Netmask: 255.255.255.0
+        SharedSecret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        EncryptionProtocol: AES256
+        Mtu: 1400
+        IsEnabled: true
+  - Name: Firewall_2
+    Creds:
+      User: xxx.xxxx.xxx
+      Password: xxxxxxxxxxxx
+      Org: x-x-xx-xxxx
+      Url: api.vcd.portal.skyscapecloud.com
+      Edge: nftxxxxxx-x    
+    GatewayIpsecVpnService:
+      IsEnabled: true
+      Tunnel:
+      - Name: east-to-west
+        IpsecVpnLocalPeerId:
+        IpsecVpnLocalPeerName:
+        PeerIpAddress: 222.222.222.222
+        PeerId: 222.222.222.222
+        LocalIpAddress: 111.111.111.111
+        LocalId: 111.111.111.111
+        PeerSubnet:
+        - Name: DMZ
+          Gateway: 10.0.1.1
+          Netmask: 255.255.255.0
+        LocalSubnet:
+        - Name: DMZ
+          Gateway: 10.0.10.1
+          Netmask: 255.255.255.0
+        SharedSecret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        EncryptionProtocol: AES256
+        Mtu: 1400
+        IsEnabled: true
