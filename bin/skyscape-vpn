@@ -1,5 +1,4 @@
-#!/usr/bin/env ruby -wU
+#!/usr/bin/env ruby 
 
-#require 'cli'
-
-puts "Hello, world!"
+require './lib/cli'
+Skyscape::Vcloud::Ipsec::Cli.start(ARGV)
