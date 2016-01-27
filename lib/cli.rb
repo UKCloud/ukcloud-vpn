@@ -1,6 +1,6 @@
 require 'thor'
-require './lib/main'
-require './lib/version'
+require 'main'
+require 'version'
 
 module Skyscape
   module Vcloud
@@ -16,7 +16,11 @@ module Skyscape
 
         desc "apply <location>", "Begin configuration of IPSec tunnels"
         def apply(path)
-          Skyscape::Vcloud::Ipsec::Main.new(path)
+          begin
+            Skyscape::Vcloud::Ipsec::Main.new(path)
+          rescue Exception => e
+            puts e.message
+          end
         end
       end
     end

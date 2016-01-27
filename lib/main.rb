@@ -1,5 +1,5 @@
 require 'fog'
-require './lib/configuration'
+require 'configuration'
 
 
 module Skyscape
