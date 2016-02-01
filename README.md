@@ -1,4 +1,4 @@
-Skyscape IPSec VPN Configuration Tool
+#Skyscape IPSec VPN Configuration Tool
 
 This command line tool allows Skyscape customers using vShield Edge firewalls to configure IPSec tunnels using a configuration file written in "YAML"
 For more information on YAML and it's syntax see: https://en.wikipedia.org/wiki/YAML
