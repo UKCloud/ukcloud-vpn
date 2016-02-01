@@ -10,8 +10,6 @@ For more information on YAML and it's syntax see: https://en.wikipedia.org/wiki/
 First ensure Ruby is installed on your machine. 
 
 To check you can run:
-```batchfile
-Add this line to your application's Gemfile:
 
 ```batchfile
 >ruby -v
@@ -124,8 +122,8 @@ Hopefully it is clear from the example file above the the file supports:
  * One or more peer subnet per tunnel
 
 
-PeerIpAddress & PeerId should be set to the public IP address of the remote vShield Firewall 
-LocalIpAddress & LocalId should be set to the public IP address of the remote vShield Firewall
+ PeerIpAddress & PeerId should be set to the public IP address of the remote vShield Firewall 
+ LocalIpAddress & LocalId should be set to the public IP address of the remote vShield Firewall
 
 
 The file can be created in any text editor (notepad etc) and is usually saved with a ".yml" file extension although this is not required by the tool.
