@@ -123,7 +123,7 @@ Hopefully it is clear from the example file above the the file supports:
 
 
 **PeerIpAddress** & **PeerId** should be set to the public IP address of the remote vShield Firewall  
-**LocalIpAddress** & **LocalId** should be set to the public IP address of the remote vShield Firewall
+**LocalIpAddress** & **LocalId** should be set to the public IP address of the local vShield Firewall
 
 
 The file can be created in any text editor (notepad etc) and is usually saved with a ".yml" file extension although this is not required by the tool.
