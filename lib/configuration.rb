@@ -1,6 +1,4 @@
 require 'yaml'
-require 'active_support/hash_with_indifferent_access'
-
 
 module Skyscape
   module Vcloud
@@ -20,7 +18,7 @@ module Skyscape
           conf = YAML.load(file)
           file.close
           
-          conf.deep_symbolize_keys! unless conf == false
+          symbolize(conf) unless conf == false
         end
         
         def parse_config
@@ -32,6 +30,19 @@ module Skyscape
           
         end
         
+        private
+
+        def symbolize(obj)
+          return obj.reduce({}) do |memo, (k, v)|
+            memo.tap { |m| m[k.to_sym] = symbolize(v) }
+          end if obj.is_a? Hash
+    
+          return obj.reduce([]) do |memo, v| 
+            memo << symbolize(v); memo
+          end if obj.is_a? Array
+  
+          obj
+        end
        
         
       end
