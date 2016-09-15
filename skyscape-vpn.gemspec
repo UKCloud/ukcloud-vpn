@@ -31,6 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "aruba"
   
   spec.add_runtime_dependency 'fog', '>=1.26.0'
-  spec.add_runtime_dependency 'activesupport'
   spec.add_runtime_dependency 'thor'
 end
