@@ -1,6 +1,6 @@
 require 'yaml'
 
-module Skyscape
+module UKCloud
   module Vcloud
     module Ipsec
       class Configuration

@@ -2,13 +2,13 @@ require 'fog'
 require 'configuration'
 
 
-module Skyscape
+module UKCloud
   module Vcloud
     module Ipsec
       class Main
         attr_accessor :config
         def initialize(config_file)
-          @config = Skyscape::Vcloud::Ipsec::Configuration.new(config_file)
+          @config = UKCloud::Vcloud::Ipsec::Configuration.new(config_file)
           configure_firewalls(@config.firewalls)
         
         end

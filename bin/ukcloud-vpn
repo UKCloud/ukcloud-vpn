@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby 
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 require 'cli'
-Skyscape::Vcloud::Ipsec::Cli.start(ARGV)
+UKCloud::Vcloud::Ipsec::Cli.start(ARGV)

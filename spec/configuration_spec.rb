@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Skyscape::Vcloud::Ipsec::Configuration do
+describe UKCloud::Vcloud::Ipsec::Configuration do
   
   before :each do
-     @test = Skyscape::Vcloud::Ipsec::Configuration.new("#{Dir.pwd}/spec/fixtures/firewalls.yml")
+     @test = UKCloud::Vcloud::Ipsec::Configuration.new("#{Dir.pwd}/spec/fixtures/firewalls.yml")
   end
   
   describe "Configurations" do
@@ -12,7 +12,7 @@ describe Skyscape::Vcloud::Ipsec::Configuration do
       FileUtils.cp("#{Dir.pwd}/spec/fixtures/firewalls.yml","#{Dir.pwd}/firewalls.yml")
       
       
-      @test = Skyscape::Vcloud::Ipsec::Configuration.new()
+      @test = UKCloud::Vcloud::Ipsec::Configuration.new()
 
       expect(@test.file_location).to eq file_name
       
@@ -25,7 +25,7 @@ describe Skyscape::Vcloud::Ipsec::Configuration do
     end
     
     it "raises error if file doesn't exist" do
-      expect{Skyscape::Vcloud::Ipsec::Configuration.new("#{Dir.pwd}/spec/fixtures/idontexist.yml")}.to raise_error("Configuration File Not Found At #{Dir.pwd}/spec/fixtures/idontexist.yml")
+      expect{UKCloud::Vcloud::Ipsec::Configuration.new("#{Dir.pwd}/spec/fixtures/idontexist.yml")}.to raise_error("Configuration File Not Found At #{Dir.pwd}/spec/fixtures/idontexist.yml")
     end
     
     it "loads the file as yaml" do
@@ -38,7 +38,7 @@ describe Skyscape::Vcloud::Ipsec::Configuration do
 
     
     it "raises an error unless there is at least one tunnel" do
-      expect{Skyscape::Vcloud::Ipsec::Configuration.new("#{Dir.pwd}/spec/fixtures/nofirewalls.yml")}.to raise_error("No firewalls In Config File: #{Dir.pwd}/spec/fixtures/nofirewalls.yml")
+      expect{UKCloud::Vcloud::Ipsec::Configuration.new("#{Dir.pwd}/spec/fixtures/nofirewalls.yml")}.to raise_error("No firewalls In Config File: #{Dir.pwd}/spec/fixtures/nofirewalls.yml")
     end
     
     it "has an array of firewalls" do

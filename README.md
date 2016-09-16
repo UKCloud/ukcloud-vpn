@@ -1,6 +1,6 @@
-#Skyscape IPSec VPN Configuration Tool
+#UKCloud IPSec VPN Configuration Tool
 
-This command line tool allows Skyscape customers using vShield Edge firewalls to configure IPSec tunnels using a configuration file written in "YAML"
+This command line tool allows UKCloud customers using vShield Edge firewalls to configure IPSec tunnels using a configuration file written in "YAML"
 For more information on YAML and it's syntax see: https://en.wikipedia.org/wiki/YAML
 
 
@@ -20,7 +20,7 @@ The tool was built using Ruby 2.0.0p247 but other versions may work.
 
 And then install the gem using:
 ```batchfile
->gem install skyscape-vpn
+>gem install ukcloud-vpn
 ```
 
 ## Usage
@@ -28,19 +28,19 @@ And then install the gem using:
 Once installed the tool can be run by executing the following:
 
 ```batchfile
->skyscape-vpn apply <path to yaml file>
+>ukcloud-vpn apply <path to yaml file>
 ```
 
 For example:
 
 ```batchfile
->skyscape-vpn apply c:\tmp\firewalls.yml
+>ukcloud-vpn apply c:\tmp\firewalls.yml
 ```
 
 Or for Linux:
 
 ```batchfile
-$ skyscape-vpn apply /tmp/firewalls.yml
+$ ukcloud-vpn apply /tmp/firewalls.yml
 ```
 
 
@@ -58,7 +58,7 @@ Firewalls:
       User: xxx.xxxx.xxx
       Password: xxxxxxxxxxxx
       Org: x-x-xx-xxxx
-      Url: api.vcd.portal.skyscapecloud.com
+      Url: api.vcd.portal.ukcloudcloud.com
       Edge: nftxxxxxx-x
     GatewayIpsecVpnService:
       IsEnabled: true
@@ -87,7 +87,7 @@ Firewalls:
       User: xxx.xxxx.xxx
       Password: xxxxxxxxxxxx
       Org: x-x-xx-xxxx
-      Url: api.vcd.portal.skyscapecloud.com
+      Url: api.vcd.portal.ukcloudcloud.com
       Edge: nftxxxxxx-x    
     GatewayIpsecVpnService:
       IsEnabled: true
@@ -130,7 +130,7 @@ The file can be created in any text editor (notepad etc) and is usually saved wi
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/skyscape-cloud-services/skyscape-vpn.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ukcloud-cloud-services/ukcloud-vpn.
 Please ensure that the tests run successfully before creating a PR and consider increasing the coverage if adding new features.
 
 The project has unit tests using Rspec which can be run using:

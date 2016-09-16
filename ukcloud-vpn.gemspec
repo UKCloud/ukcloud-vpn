@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "skyscape-vpn"
-  spec.version       = Skyscape::Vcloud::Ipsec::VERSION
+  spec.name          = "ukcloud-vpn"
+  spec.version       = UKCloud::Vcloud::Ipsec::VERSION
   spec.authors       = ["Tim Lawrence"]
-  spec.email         = ["tlawrence@skyscapecloud.com"]
+  spec.email         = ["tlawrence@ukcloudcloud.com"]
 
   spec.summary       = %q{Configure vCloud Director IPSec VPNs}
-  spec.homepage      = "https://github.com/skyscape-cloud-services"
+  spec.homepage      = "https://github.com/ukcloud-cloud-services"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
