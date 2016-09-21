@@ -58,7 +58,7 @@ Firewalls:
       User: xxx.xxxx.xxx
       Password: xxxxxxxxxxxx
       Org: x-x-xx-xxxx
-      Url: api.vcd.portal.ukcloudcloud.com
+      Url: api.vcd.portal.ukcloud.com
       Edge: nftxxxxxx-x
     GatewayIpsecVpnService:
       IsEnabled: true
@@ -87,7 +87,7 @@ Firewalls:
       User: xxx.xxxx.xxx
       Password: xxxxxxxxxxxx
       Org: x-x-xx-xxxx
-      Url: api.vcd.portal.ukcloudcloud.com
+      Url: api.vcd.portal.ukcloud.com
       Edge: nftxxxxxx-x    
     GatewayIpsecVpnService:
       IsEnabled: true
