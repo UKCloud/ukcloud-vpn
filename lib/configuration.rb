@@ -17,8 +17,8 @@ module UKCloud
           file = File.open(@file_location)
           conf = YAML.load(file)
           file.close
-          
-          symbolize(conf) unless conf == false
+
+          symbolize(conf) if conf
         end
 
         def find_firewall_by_name(name)
