@@ -54,8 +54,8 @@ module UKCloud
         def get_edge_href(edge_name, connection)
           puts "Getting vShield Edge HREF From Query"
           results = connection.get_execute_query(type="edgeGateway", :filter => "name==#{edge_name}").body
-          
-          raise "Edge #{edge_name} Not Found!" unless results[:total] == "1"
+
+          raise "Edge #{edge_name} Not Found!" if results[:total].to_i < 1
           raise "Edge Name #{edge_name} Not Unique!" if results[:total].to_i > 1
           puts "Finished Getting vShield Edge HREF From Query"
           result = results[:EdgeGatewayRecord][:href]
