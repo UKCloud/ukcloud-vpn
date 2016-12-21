@@ -151,14 +151,14 @@ Connected to vCloud Director API
 Getting vShield Edge HREF From Query
 Finished Getting vShield Edge HREF From Query
 Configuring VPN Service For Firewall: nftxxxxxx-x
-  Task:  Completed With Status:
+  Task:  Completed With Status: completed
 Finished Configuring VPN Service For Firewall: nftxxxxxx-x
 Connecting to vCloud Director API
 Connected to vCloud Director API
 Getting vShield Edge HREF From Query
 Finished Getting vShield Edge HREF From Query
 Configuring VPN Service For Firewall: nftxxxxxx-x
-  Task:  Completed With Status:
+  Task:  Completed With Status: completed
 Finished Configuring VPN Service For Firewall: nftxxxxxx-x
 ```
 
