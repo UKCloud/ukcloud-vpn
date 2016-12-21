@@ -23,8 +23,8 @@ module UKCloud
           creds = firewall[:Creds]
           connection = vcloud_login(creds)
           edge_id = get_edge_href(creds[:Edge],connection).split('/').last
-          
-          puts "Configuring VPN Service For Firewall: #{creds[:Edge]}"
+
+          puts "Configuring VPN Service For #{firewall[:Name]}: #{creds[:Edge]}"
           task = connection.post_configure_edge_gateway_services(edge_id,firewall).body
           monitor_task(task[:href].split('/').last,connection)
           puts "Finished Configuring VPN Service For Firewall: #{creds[:Edge]}"
@@ -54,8 +54,8 @@ module UKCloud
         def get_edge_href(edge_name, connection)
           puts "Getting vShield Edge HREF From Query"
           results = connection.get_execute_query(type="edgeGateway", :filter => "name==#{edge_name}").body
-          
-          raise "Edge #{edge_name} Not Found!" unless results[:total] == "1"
+
+          raise "Edge #{edge_name} Not Found!" if results[:total].to_i < 1
           raise "Edge Name #{edge_name} Not Unique!" if results[:total].to_i > 1
           puts "Finished Getting vShield Edge HREF From Query"
           result = results[:EdgeGatewayRecord][:href]

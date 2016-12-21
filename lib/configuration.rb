@@ -17,10 +17,16 @@ module UKCloud
           file = File.open(@file_location)
           conf = YAML.load(file)
           file.close
-          
-          symbolize(conf) unless conf == false
+
+          symbolize(conf) if conf
         end
-        
+
+        def find_firewall_by_name(name)
+          @firewalls.detect do |firewall|
+            firewall[:Name].eql? name
+          end
+        end
+
         def parse_config
           raise("No firewalls In Config File: #{@file_location}") unless @full_config.is_a?(Hash) && @full_config[:Firewalls]
           raise("No firewalls In Config File: #{@file_location}") unless @full_config[:Firewalls].is_a?(Array) && @full_config[:Firewalls].length > 0

@@ -133,10 +133,33 @@ The file can be created in any text editor (notepad etc) and is usually saved wi
 Bug reports and pull requests are welcome on GitHub at https://github.com/ukcloud-cloud-services/ukcloud-vpn.
 Please ensure that the tests run successfully before creating a PR and consider increasing the coverage if adding new features.
 
+### Testing
+
 The project has unit tests using Rspec which can be run using:
 
 ```batchfile
 >bundle exec rspec
+```
+
+One of the tests configures a VPN using the firewalls.yml file and a mocked HTTP connection to vCloud Director API. The UKCloud VPN tool will print out what it is doing as it does it, so you can also verify that the tool still works by checking the output in the console against this list:
+
+```bash
+UKCloud::Vcloud::Ipsec::Configuration
+  loading current configuration using the vCloud API
+Connecting to vCloud Director API
+Connected to vCloud Director API
+Getting vShield Edge HREF From Query
+Finished Getting vShield Edge HREF From Query
+Configuring VPN Service For Firewall: nftxxxxxx-x
+  Task:  Completed With Status: completed
+Finished Configuring VPN Service For Firewall: nftxxxxxx-x
+Connecting to vCloud Director API
+Connected to vCloud Director API
+Getting vShield Edge HREF From Query
+Finished Getting vShield Edge HREF From Query
+Configuring VPN Service For Firewall: nftxxxxxx-x
+  Task:  Completed With Status: completed
+Finished Configuring VPN Service For Firewall: nftxxxxxx-x
 ```
 
 The CLI tests are written using Cucumber & Aruba and can be run using:
