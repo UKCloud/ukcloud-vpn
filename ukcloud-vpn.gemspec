@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "ukcloud-vpn"
   spec.version       = UKCloud::Vcloud::Ipsec::VERSION
   spec.authors       = ["Tim Lawrence"]
-  spec.email         = ["tlawrence@ukcloudcloud.com"]
+  spec.email         = ["tlawrence@ukcloud.com"]
 
   spec.summary       = %q{Configure vCloud Director IPSec VPNs}
   spec.homepage      = "https://github.com/ukcloud-cloud-services"
