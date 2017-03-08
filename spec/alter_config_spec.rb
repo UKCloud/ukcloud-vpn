@@ -4,16 +4,16 @@ require 'active_support/core_ext/hash/conversions'
 describe UKCloud::Vcloud::Ipsec::Configuration do
   context 'loading current configuration using the vCloud API' do
     before do
-      stub_request(:post, "https://api.vcd.portal.ukcloudcloud.com/api/sessions")
+      stub_request(:post, "https://api.vcd.portal.skyscapecloud.com/api/sessions")
         .to_return(:status => 200, :body => {return_body: "let"}.to_xml, :headers => { "CONTENT_TYPE" => "application/xml"} )
 
-      stub_request(:get, "https://api.vcd.portal.ukcloudcloud.com/api/query?filter=name==nftxxxxxx-x&type=edgeGateway")
+      stub_request(:get, "https://api.vcd.portal.skyscapecloud.com/api/query?filter=name==nftxxxxxx-x&type=edgeGateway")
         .to_return(:status => 200, :body => query_response_body.to_xml, :headers => { "CONTENT_TYPE" => "application/xml" } )
 
-      stub_request(:post, "https://api.vcd.portal.ukcloudcloud.com/api/admin/edgeGateway/639f07a1-4644-40bd-9f91-e85008850398/action/configureServices")
+      stub_request(:post, "https://api.vcd.portal.skyscapecloud.com/api/admin/edgeGateway/639f07a1-4644-40bd-9f91-e85008850398/action/configureServices")
         .to_return(:status => 202, :body => configure_response_body.to_xml, :headers => { "CONTENT_TYPE" => "application/xml" })
 
-      stub_request(:get, "https://api.vcd.portal.ukcloudcloud.com/api/task/news")
+      stub_request(:get, "https://api.vcd.portal.skyscapecloud.com/api/task/news")
         .to_return(:status => 200, :body => { status: "completed" }.to_xml, :headers => {})
     end
 
